@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="208b4cc8-d9ee-450e-9d0b-c23bb2b2faf1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Juanjocampus1&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/lluanllo/EVS_Back.git",
+    "accountId": "4a3d8911-faea-42c3-a769-9750e78cdb5c"
+  }
+}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2jN5RHxMyx2FofufuIxZQ2fN1wZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/deberes/1º de DAM/PROGRAMACION/JAVA/TFG/TFG_BACK",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\deberes\1º de DAM\PROGRAMACION\JAVA\TFG\TFG_BACK" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MicroserviceErekaServerApplication">
+    <configuration name="MicroserviceCourseApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="MicroserviceCourseApi" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.empresa.course.MicroserviceCourseApi.MicroserviceCourseApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MicroserviceErekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="MicroserviceErekaServer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.empresa.eureka.MicroserviceErekaServer.MicroserviceErekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MicroserviceScheduleApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="MicroserviceScheduleApi" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.empresa.MicroserviceScheduleApi.MicroserviceScheduleApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MicroserviceStudentsApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="MicroserviceStudentsAPI" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.empresa.students.MicroserviceStudentsAPI.MicroserviceStudentsApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MicroserviceTeacherRegisterApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="MicroserviceTeacherRegisterAPI" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.empresa.teacher.MicroserviceTeacherRegisterAPI.MicroserviceTeacherRegisterApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.26775.15" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.26775.15" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="208b4cc8-d9ee-450e-9d0b-c23bb2b2faf1" name="Changes" comment="" />
+      <created>1721214686389</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1721214686389</updated>
+      <workItem from="1721214687642" duration="1425000" />
+      <workItem from="1723652520017" duration="391000" />
+      <workItem from="1723652934534" duration="267000" />
+      <workItem from="1723722541961" duration="4216000" />
+      <workItem from="1723729865927" duration="3836000" />
+      <workItem from="1723910736277" duration="1638000" />
+      <workItem from="1723913974228" duration="702000" />
+      <workItem from="1723981073529" duration="3249000" />
+      <workItem from="1724613383847" duration="95000" />
+      <workItem from="1724613501970" duration="758000" />
+      <workItem from="1725464574645" duration="30000" />
+      <workItem from="1725464618525" duration="5376000" />
+      <workItem from="1725481579380" duration="2953000" />
+      <workItem from="1725534793566" duration="2551000" />
+      <workItem from="1725543315380" duration="2243000" />
+      <workItem from="1725724280876" duration="3681000" />
+      <workItem from="1728168608605" duration="1444000" />
+      <workItem from="1728219505123" duration="1086000" />
+      <workItem from="1728593464824" duration="62000" />
+      <workItem from="1728593538203" duration="1504000" />
+      <workItem from="1728839276815" duration="27000" />
+      <workItem from="1730834098082" duration="1446000" />
+      <workItem from="1731003867938" duration="2851000" />
+      <workItem from="1731014708745" duration="756000" />
+      <workItem from="1731016600366" duration="1801000" />
+      <workItem from="1731340823688" duration="355000" />
+      <workItem from="1746891215546" duration="187000" />
+      <workItem from="1765309974674" duration="1154000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>
