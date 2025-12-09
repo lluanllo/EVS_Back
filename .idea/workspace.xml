@@ -4,17 +4,81 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="208b4cc8-d9ee-450e-9d0b-c23bb2b2faf1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Controller/ScheudleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/ScheudleEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Repository/ScheudleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Impl/ScheudleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Inter/IScheudleService.java" afterDir="false" />
+    <list default="true" id="208b4cc8-d9ee-450e-9d0b-c23bb2b2faf1" name="Changes" comment="Add schedule management functionality and refactor course service structure">
+      <change afterPath="$PROJECT_DIR$/.idea/copilotDiffState.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Controller/DTO/CourseRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Controller/DTO/CourseResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Controller/DTO/RoutePlanRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Controller/DTO/RoutePlanResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Enums/CourseType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Enums/ManeuverType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Enums/WindDirection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/NauticalZone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/RouteLeg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/RoutePlan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Schedule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Kafka/Config/KafkaTopicConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Kafka/Consumer/CourseEventConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Kafka/Events/BaseEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Kafka/Events/CourseEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Kafka/Events/NotificationEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Kafka/Events/ScheduleEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Kafka/Producer/CourseEventProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Repository/NauticalZoneRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Repository/RoutePlanRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Repository/ScheduleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Security/JwtService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Impl/CourseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Impl/RouteImageGeneratorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Impl/RoutePlannerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Impl/ScheduleOrganizerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Impl/ScheduleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Inter/ScheduleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Controller/DTO/StudentRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Controller/DTO/StudentResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Entities/Enums/SkillLevel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Security/JwtService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Service/StudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Controller/DTO/AuthRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Controller/DTO/AuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Controller/DTO/TeacherRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Controller/DTO/TeacherResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Entities/Enums/ContractType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Entities/Enums/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Entities/Enums/Speciality.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Entities/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Security/JwtService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Service/NotificationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Service/TeacherAssignmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Service/TeacherService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceCourseApi/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Client/StudentClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Client/TeacherClient.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Controller/CourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Impl/CourseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/ICourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Inter/ICourseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Repository/CourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Repository/CourseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceStudentsAPI/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceStudentsAPI/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Controller/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Entities/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Entities/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Repository/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Repository/StudentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Controller/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Entities/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Entities/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Repository/TeacherRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Repository/TeacherRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,12 +109,12 @@
     &quot;assignee&quot;: &quot;Juanjocampus1&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/lluanllo/EVS_Back.git",
-    "accountId": "4a3d8911-faea-42c3-a769-9750e78cdb5c"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/lluanllo/EVS_Back.git&quot;,
+    &quot;accountId&quot;: &quot;4a3d8911-faea-42c3-a769-9750e78cdb5c&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -63,27 +127,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "MicroserviceCurse",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/deberes/1º de DAM/PROGRAMACION/JAVA/TFG/TFG_BACK",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;MicroserviceCurse&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/deberes/1º de DAM/PROGRAMACION/JAVA/TFG/TFG_BACK&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\deberes\1º de DAM\PROGRAMACION\JAVA\TFG\TFG_BACK" />
@@ -178,8 +242,18 @@
       <workItem from="1731016600366" duration="1801000" />
       <workItem from="1731340823688" duration="355000" />
       <workItem from="1746891215546" duration="187000" />
-      <workItem from="1765309974674" duration="2542000" />
+      <workItem from="1765309974674" duration="2694000" />
+      <workItem from="1765316079583" duration="3769000" />
     </task>
+    <task id="LOCAL-00001" summary="Add schedule management functionality and refactor course service structure">
+      <option name="closed" value="true" />
+      <created>1765312579770</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1765312579770</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +269,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add schedule management functionality and refactor course service structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add schedule management functionality and refactor course service structure" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

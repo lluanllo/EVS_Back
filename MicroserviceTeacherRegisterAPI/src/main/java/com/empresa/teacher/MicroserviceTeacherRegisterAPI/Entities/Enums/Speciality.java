@@ -1,0 +1,26 @@
+package com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Enums;
+
+/**
+ * Especialidades de navegación que puede tener un profesor
+ */
+public enum Speciality {
+    WINDSURF("Windsurf"),
+    CATAMARAN("Catamarán"),
+    MINICATA("Minicatamarán"),
+    OPTIMIST("Optimist"),
+    PADDLE_SURF("Paddle Surf"),
+    KAYAK("Kayak"),
+    SUMMER_CAMP("Campamento de Verano"),
+    VELA_LIGERA("Vela Ligera");
+
+    private final String displayName;
+
+    Speciality(String displayName) {
+        this.displayName = displayName;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+}
+
