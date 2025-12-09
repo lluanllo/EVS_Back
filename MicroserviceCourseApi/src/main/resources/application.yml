@@ -11,14 +11,38 @@ spring:
     password: curso
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  kafka:
+    bootstrap-servers: localhost:29092
+    consumer:
+      group-id: course-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+jwt:
+  secret: RVZTX0xhQW50aWxsYV9TZWNyZXRLZXlfMjAyNF9URkdfU2FpbGluZ1NjaG9vbF9KV1RfVG9rZW5fS2V5
+  expiration: 86400000
+
+# Configuración de la playa - La Antilla
+sailing:
+  beach:
+    name: La Antilla
+    latitude: 37.2074
+    longitude: -7.2193
+    orientation: 180  # Orientación en grados (Sur)
 
 eureka:
   instance:
     hostname: localhost
   client:
-      serviceUrl:
-          defaultZone: http://localhost:8761/eureka/
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

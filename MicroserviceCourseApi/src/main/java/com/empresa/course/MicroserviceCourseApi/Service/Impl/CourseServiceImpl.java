@@ -1,4 +1,4 @@
-package com.empresa.course.MicroserviceCourseApi.Service;
+package com.empresa.course.MicroserviceCourseApi.Service.Impl;
 
 import com.empresa.course.MicroserviceCourseApi.Client.StudentClient;
 import com.empresa.course.MicroserviceCourseApi.Client.TeacherClient;
@@ -7,6 +7,7 @@ import com.empresa.course.MicroserviceCourseApi.Controller.DTO.TeacherDTO;
 import com.empresa.course.MicroserviceCourseApi.Entities.Course;
 import com.empresa.course.MicroserviceCourseApi.HTTP.Response.StudentsTeachersByCourseResponse;
 import com.empresa.course.MicroserviceCourseApi.Repository.CourseRepository;
+import com.empresa.course.MicroserviceCourseApi.Service.Inter.ICourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

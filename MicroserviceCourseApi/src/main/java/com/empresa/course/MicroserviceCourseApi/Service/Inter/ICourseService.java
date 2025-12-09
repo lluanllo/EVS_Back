@@ -1,4 +1,4 @@
-package com.empresa.course.MicroserviceCourseApi.Service;
+package com.empresa.course.MicroserviceCourseApi.Service.Inter;
 
 import com.empresa.course.MicroserviceCourseApi.Entities.Course;
 import com.empresa.course.MicroserviceCourseApi.HTTP.Response.StudentsTeachersByCourseResponse;
