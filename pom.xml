@@ -22,7 +22,6 @@
         <module>MicroserviceStudentsAPI</module>
         <module>MicroserviceTeacherRegisterAPI</module>
         <module>MicroserviceCourseApi</module>
-        <module>MicroserviceScheduleApi</module>
     </modules>
 
     <properties>

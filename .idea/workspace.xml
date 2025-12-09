@@ -6,7 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="208b4cc8-d9ee-450e-9d0b-c23bb2b2faf1" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Controller/ScheudleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/ScheudleEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Repository/ScheudleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Impl/ScheudleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Inter/IScheudleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Controller/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Impl/CourseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/ICourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Inter/ICourseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +32,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -54,7 +68,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "MicroserviceCurse",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/deberes/1º de DAM/PROGRAMACION/JAVA/TFG/TFG_BACK",
     "node.js.detected.package.eslint": "true",
@@ -164,12 +178,23 @@
       <workItem from="1731016600366" duration="1801000" />
       <workItem from="1731340823688" duration="355000" />
       <workItem from="1746891215546" duration="187000" />
-      <workItem from="1765309974674" duration="1154000" />
+      <workItem from="1765309974674" duration="2542000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

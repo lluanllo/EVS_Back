@@ -1,7 +1,7 @@
 package com.empresa.course.MicroserviceCourseApi.Controller;
 
 import com.empresa.course.MicroserviceCourseApi.Entities.Course;
-import com.empresa.course.MicroserviceCourseApi.Service.ICourseService;
+import com.empresa.course.MicroserviceCourseApi.Service.Inter.ICourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
