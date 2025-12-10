@@ -99,5 +99,36 @@ public class StudentController {
         studentService.updateSkillLevel(id, skillLevel);
         return ResponseEntity.ok().build();
     }
+
+    // === Nuevos endpoints para alumnos ===
+
+    @GetMapping("/{id}/classes")
+    @PreAuthorize("hasAnyRole('ADMIN', 'TEACHER', 'STUDENT')")
+    public ResponseEntity<java.util.List<java.util.Map<String, Object>>> getClassHistory(@PathVariable Long id) {
+        return ResponseEntity.ok(studentService.getClassHistory(id));
+    }
+
+    @GetMapping("/{id}/exercises")
+    @PreAuthorize("hasAnyRole('ADMIN', 'TEACHER', 'STUDENT')")
+    public ResponseEntity<java.util.List<java.util.Map<String, Object>>> getExercisesCompleted(@PathVariable Long id) {
+        return ResponseEntity.ok(studentService.getExercisesCompleted(id));
+    }
+
+    @GetMapping("/{id}/stats")
+    @PreAuthorize("hasAnyRole('ADMIN', 'TEACHER', 'STUDENT')")
+    public ResponseEntity<java.util.Map<String, Object>> getStudentStats(@PathVariable Long id) {
+        return ResponseEntity.ok(studentService.getStudentStats(id));
+    }
+
+    @GetMapping("/{id}/total-classes")
+    @PreAuthorize("hasAnyRole('ADMIN', 'TEACHER', 'STUDENT')")
+    public ResponseEntity<java.util.Map<String, Integer>> getTotalClassesAttended(@PathVariable Long id) {
+        return ResponseEntity.ok(java.util.Map.of("totalClasses", studentService.getTotalClassesAttended(id)));
+    }
+
+    @GetMapping("/weather-prediction")
+    public ResponseEntity<java.util.Map<String, Object>> getWeatherPrediction() {
+        return ResponseEntity.ok(studentService.getWeatherPrediction());
+    }
 }
 

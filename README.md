@@ -5,34 +5,37 @@ Sistema backend basado en microservicios para la gestión integral de una escuel
 ## 🏗️ Arquitectura
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                         EVS La Antilla                               │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                      │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐              │
-│  │  Teacher    │    │  Students   │    │   Course    │              │
-│  │   API       │    │    API      │    │    API      │              │
-│  │  :8082      │    │   :8081     │    │   :8083     │              │
-│  └──────┬──────┘    └──────┬──────┘    └──────┬──────┘              │
-│         │                  │                  │                      │
-│         └──────────────────┼──────────────────┘                      │
-│                            │                                         │
-│                    ┌───────┴───────┐                                 │
-│                    │    KAFKA      │                                 │
-│                    │   :29092      │                                 │
-│                    └───────────────┘                                 │
-│                            │                                         │
-│                    ┌───────┴───────┐                                 │
-│                    │  PostgreSQL   │                                 │
-│                    │    :5432      │                                 │
-│                    └───────────────┘                                 │
-│                                                                      │
-│                    ┌───────────────┐                                 │
-│                    │   Eureka      │                                 │
-│                    │    :8761      │                                 │
-│                    └───────────────┘                                 │
-│                                                                      │
-└─────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                           EVS La Antilla                                      │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                               │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐          │
+│  │  Teacher    │  │  Students   │  │   Course    │  │ Contability │          │
+│  │    API      │  │    API      │  │    API      │  │    API      │          │
+│  │   :8082     │  │   :8081     │  │   :8083     │  │   :8084     │          │
+│  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘          │
+│         │                │                │                │                  │
+│         └────────────────┴────────────────┴────────────────┘                  │
+│                                   │                                           │
+│                           ┌───────┴───────┐                                   │
+│                           │    KAFKA      │                                   │
+│                           │   :29092      │                                   │
+│                           └───────────────┘                                   │
+│                                   │                                           │
+│              ┌────────────────────┴────────────────────┐                      │
+│              │                                         │                      │
+│      ┌───────┴───────┐                        ┌────────┴────────┐             │
+│      │  PostgreSQL   │                        │    MongoDB      │             │
+│      │    :5432      │                        │    :27017       │             │
+│      │ (Datos CRUD)  │                        │ (PDFs, Fotos)   │             │
+│      └───────────────┘                        └─────────────────┘             │
+│                                                                               │
+│                           ┌───────────────┐                                   │
+│                           │   Eureka      │                                   │
+│                           │    :8761      │                                   │
+│                           └───────────────┘                                   │
+│                                                                               │
+└──────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ## 📦 Microservicios
@@ -44,27 +47,48 @@ Sistema backend basado en microservicios para la gestión integral de una escuel
 - **Tipos de contrato**: FIJO (prioridad 1), TEMPORAL (prioridad 2), PRACTICAS (prioridad 3)
 - **Algoritmo de asignación**: Distribución equitativa de horas respetando prioridades
 - **Sistema de notificaciones**: Email para horarios y confirmaciones
+- **Fotos de perfil**: Almacenamiento en MongoDB
 
 ### MicroserviceStudentsAPI (Puerto 8081)
 - **CRUD de estudiantes**: Gestión completa
 - **Niveles de habilidad**: BEGINNER, INTERMEDIATE, ADVANCED, EXPERT
 - **Inscripción a cursos**: Multi-curso por estudiante
+- **Historial de clases**: Consulta de clases realizadas
+- **Ejercicios completados**: Seguimiento de progreso
+- **Predicción de viento**: Consulta de condiciones meteorológicas
 - **Gestión de socios**: Diferenciación de clientes
 
 ### MicroserviceCourseApi (Puerto 8083)
 - **CRUD de cursos**: Gestión completa
-- **Tipos de curso**: WINDSURF, CATAMARAN, MINICATA, etc.
-- **Organizador de horarios**: Algoritmo automático de planificación
-- **Planificador de rutas**: Genera rutas de navegación basadas en:
-  - Dirección y velocidad del viento
-  - Nivel del estudiante
-  - Tipo de embarcación
-  - Duración de la clase
-- **Generador de imágenes**: Dibujo visual de la ruta con viradas y bordos
+- **Planificador de rutas**: Generación de rutas de navegación según viento
+- **Generador de imágenes**: Rutas visuales para profesores
+- **Web Scraping meteorológico**: Datos de https://www.escuela-vela.com/meteo/
+- **Generación de PDFs**: Documentos de clase con maniobras y bordos
+- **Sistema de alquiler**: CRUD de equipamiento y alquileres
+- **Verificación de aptitud**: Control de quien puede alquilar material
+- **Sistema de regatas**: Inscripciones, mangas, resultados y clasificación
+- **Rating de barcos**: Cálculo automático de handicap
+
+### MicroserviceContabilityApi (Puerto 8084)
+- **Gestión de pagos**: Clases, alquileres, summercamps, regatas
+- **Control de sueldos**: Configuración salarial por profesor
+- **Registro de horas**: Control de horas trabajadas con validación
+- **Generación de nóminas**: Cálculo automático con deducciones (IRPF, SS)
+- **Cuadre de caja**: Control diario de efectivo/transferencias/tarjeta/bizum
+- **Detección de descuadres**: Análisis y desglose de discrepancias
 
 ### MicroserviceErekaServer (Puerto 8761)
 - Descubrimiento de servicios
 - Registro de microservicios
+
+## 🔐 Roles del Sistema
+
+| Rol | Descripción |
+|-----|-------------|
+| **ADMIN** | Administrador del sistema - Control total |
+| **BOSS** | Dueños de la escuela - Eventos, regatas, nóminas, cuadre de caja |
+| **TEACHER** | Profesores - Gestión de clases, alquileres |
+| **STUDENT** | Alumnos - Consulta de historial y predicción |
 
 ## 🚀 Inicio Rápido
 
@@ -80,235 +104,94 @@ docker-compose up -d
 
 Esto levanta:
 - PostgreSQL (puerto 5432)
+- MongoDB (puerto 27017)
 - Kafka + Zookeeper (puerto 29092)
 - Kafka UI (puerto 8090)
+- Mongo Express (puerto 8091)
 
 ### 2. Compilar el proyecto
 ```bash
 mvn clean install -DskipTests
 ```
 
-### 3. Ejecutar microservicios
-
+### 3. Iniciar microservicios (en orden)
 ```bash
-# Terminal 1 - Eureka Server
-cd MicroserviceErekaServer
-mvn spring-boot:run
+# 1. Eureka Server
+cd MicroserviceErekaServer && mvn spring-boot:run
 
-# Terminal 2 - Teacher API
-cd MicroserviceTeacherRegisterAPI
-mvn spring-boot:run
-
-# Terminal 3 - Students API
-cd MicroserviceStudentsAPI
-mvn spring-boot:run
-
-# Terminal 4 - Course API
-cd MicroserviceCourseApi
-mvn spring-boot:run
+# 2. Los demás servicios (en terminales separadas)
+cd MicroserviceTeacherRegisterAPI && mvn spring-boot:run
+cd MicroserviceStudentsAPI && mvn spring-boot:run
+cd MicroserviceCourseApi && mvn spring-boot:run
+cd MicroserviceContabilityApi && mvn spring-boot:run
 ```
 
-## 🔐 Autenticación
+## 📋 Endpoints Principales
 
-### Registrar un administrador
-```bash
-curl -X POST "http://localhost:8082/api/auth/register/admin?email=admin@evs.com&password=admin123&name=Admin"
-```
-
-### Registrar un profesor
-```bash
-curl -X POST http://localhost:8082/api/auth/register/teacher \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "Juan",
-    "lastName": "García",
-    "dni": "12345678A",
-    "phone": "666777888",
-    "email": "juan@evs.com",
-    "password": "password123",
-    "specialities": ["WINDSURF", "CATAMARAN"],
-    "contractType": "FIJO",
-    "maxWeeklyHours": 40
-  }'
-```
-
-### Login
-```bash
-curl -X POST http://localhost:8082/api/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{
-    "email": "admin@evs.com",
-    "password": "admin123"
-  }'
-```
-
-## 📚 API Endpoints
+### Autenticación
+- `POST /api/auth/register` - Registro de usuario
+- `POST /api/auth/login` - Login y obtención de JWT
 
 ### Profesores
-| Método | Endpoint | Descripción |
-|--------|----------|-------------|
-| GET | /api/teachers | Listar todos |
-| GET | /api/teachers/{id} | Obtener por ID |
-| POST | /api/teachers | Crear profesor |
-| PUT | /api/teachers/{id} | Actualizar |
-| DELETE | /api/teachers/{id} | Eliminar |
-| GET | /api/teachers/available/{speciality} | Por especialidad |
-| POST | /api/teachers/assign | Asignar automáticamente |
+- `GET/POST/PUT/DELETE /api/teachers` - CRUD
+- `POST /api/teachers/{id}/photo` - Subir foto de perfil
+- `GET /api/teachers/{id}/photo` - Obtener foto
 
-### Estudiantes
-| Método | Endpoint | Descripción |
-|--------|----------|-------------|
-| GET | /api/students | Listar todos |
-| GET | /api/students/{id} | Obtener por ID |
-| POST | /api/students | Crear estudiante |
-| PUT | /api/students/{id} | Actualizar |
-| DELETE | /api/students/{id} | Eliminar |
-| POST | /api/students/{id}/enroll/{courseId} | Inscribir en curso |
+### Alumnos
+- `GET/POST/PUT/DELETE /api/students` - CRUD
+- `GET /api/students/{id}/classes` - Historial de clases
+- `GET /api/students/{id}/exercises` - Ejercicios completados
+- `GET /api/students/weather-prediction` - Predicción del viento
 
 ### Cursos
-| Método | Endpoint | Descripción |
-|--------|----------|-------------|
-| GET | /api/courses | Listar todos |
-| GET | /api/courses/{id} | Obtener por ID |
-| POST | /api/courses | Crear curso |
-| PUT | /api/courses/{id} | Actualizar |
-| DELETE | /api/courses/{id} | Eliminar |
-| POST | /api/courses/generate-route | Generar plan de ruta |
-| POST | /api/courses/organize-week | Organizar horarios semanales |
+- `GET/POST/PUT/DELETE /api/courses` - CRUD
+- `GET /api/weather/current` - Datos meteorológicos actuales
+- `POST /api/class-documents/generate` - Generar PDF de clase
 
-## 🧭 Planificador de Rutas
+### Alquileres
+- `GET/POST /api/rentals/equipment` - Gestión de equipamiento
+- `POST /api/rentals` - Crear alquiler
+- `POST /api/rentals/{id}/complete` - Completar alquiler
 
-El sistema genera planes de navegación inteligentes:
+### Regatas
+- `GET/POST /api/regattas` - Gestión de regatas (BOSS)
+- `POST /api/regattas/{id}/participants` - Inscribirse
+- `GET /api/regattas/{id}/classification` - Clasificación
 
-### Ejemplo de solicitud
-```bash
-curl -X POST http://localhost:8083/api/courses/generate-route \
-  -H "Authorization: Bearer {token}" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "courseType": "WINDSURF",
-    "windDirection": "SW",
-    "windSpeedKnots": 12,
-    "classDurationMinutes": 60,
-    "studentLevel": 2
-  }'
-```
+### Contabilidad
+- `POST /api/payments` - Registrar pago
+- `POST /api/worked-hours` - Registrar horas trabajadas
+- `POST /api/payrolls/generate` - Generar nómina
+- `POST /api/cash-register/close` - Cerrar caja del día
+- `GET /api/cash-register/discrepancy-report/{date}` - Informe de descuadre
 
-### Respuesta
-- Lista de tramos (legs) con rumbo, duración y distancia
-- Tipos de maniobra: VIRADA, TRASLUCHADA, CEÑIDA, TRAVES, LARGO, POPA
-- Imagen en Base64 del recorrido
-- Notas de seguridad
-- Resumen del plan
+## 📡 Comunicación Kafka
 
-## 📊 Algoritmo de Asignación de Profesores
+Los microservicios se comunican mediante eventos Kafka:
 
-El sistema asigna profesores siguiendo estas reglas:
+| Topic | Descripción |
+|-------|-------------|
+| `schedule-events` | Horarios y asignaciones |
+| `payment-events` | Pagos registrados |
+| `worked-hours-events` | Horas trabajadas |
+| `rental-events` | Alquileres |
+| `regatta-events` | Eventos de regatas |
+| `class-completed-events` | Clases completadas |
 
-1. **Prioridad por tipo de contrato**:
-   - FIJO (prioridad 1)
-   - TEMPORAL (prioridad 2)
-   - PRACTICAS (prioridad 3)
+## 🗄️ Bases de Datos
 
-2. **Equidad dentro del mismo nivel**:
-   - Se asigna al profesor con menos horas trabajadas
-   - Si hay empate, se alterna aleatoriamente
+### PostgreSQL (Datos relacionales)
+- Profesores, Alumnos, Cursos
+- Pagos, Nóminas, Horas trabajadas
+- Equipamiento, Alquileres
+- Regatas, Participantes, Resultados
 
-3. **Restricciones**:
-   - Solo profesores con la especialidad requerida
-   - Solo profesores disponibles
-   - No superar horas máximas semanales
+### MongoDB (Documentos)
+- Fotos de perfil de profesores
+- PDFs de clases generados
+- Datos meteorológicos históricos
+- Documentos de clase
 
-## 📧 Sistema de Notificaciones
+## 👨‍💻 Desarrollo
 
-- Envío de horarios semanales por email
-- Solicitud de confirmación de disponibilidad
-- Recordatorios automáticos
-- Notificación de reasignaciones
-- Envío de planes de ruta
-
-## 🗄️ Base de Datos
-
-Todas las tablas están en PostgreSQL con esquema unificado:
-
-- `users` - Usuarios del sistema
-- `teachers` - Profesores con especialidades
-- `students` - Estudiantes con niveles
-- `courses` - Cursos y tipos
-- `schedules` - Horarios
-- `route_plans` - Planes de navegación
-- `route_legs` - Tramos de rutas
-- `nautical_zones` - Zonas del canal náutico
-
-## 📬 Kafka Topics
-
-- `teacher-events` - Eventos de profesores
-- `student-events` - Eventos de estudiantes
-- `course-events` - Eventos de cursos
-- `schedule-events` - Eventos de horarios
-- `notification-events` - Eventos de notificaciones
-
-## 🔧 Configuración
-
-Variables de entorno importantes:
-
-```yaml
-# Base de datos
-POSTGRES_HOST: localhost
-POSTGRES_PORT: 5432
-POSTGRES_DB: tfgdb
-POSTGRES_USER: postgres
-POSTGRES_PASSWORD: curso
-
-# Kafka
-KAFKA_BOOTSTRAP_SERVERS: localhost:29092
-
-# JWT
-JWT_SECRET: EVS_LaAntilla_SecretKey_2024_TFG_SailingSchool_JWT_Token_Key
-JWT_EXPIRATION: 86400000
-
-# Mail (opcional)
-MAIL_USERNAME: your-email@gmail.com
-MAIL_PASSWORD: your-app-password
-```
-
-## 📁 Estructura del Proyecto
-
-```
-TFG_BACK/
-├── docker-compose.yml
-├── pom.xml
-├── MicroserviceErekaServer/
-├── MicroserviceTeacherRegisterAPI/
-│   └── src/main/java/.../
-│       ├── Controller/
-│       ├── Entities/
-│       ├── Repository/
-│       ├── Service/
-│       ├── Security/
-│       └── Kafka/
-├── MicroserviceStudentsAPI/
-│   └── src/main/java/.../
-│       ├── Controller/
-│       ├── Entities/
-│       ├── Repository/
-│       ├── Service/
-│       └── Security/
-└── MicroserviceCourseApi/
-    └── src/main/java/.../
-        ├── Controller/
-        ├── Entities/
-        ├── Repository/
-        ├── Service/
-        ├── Security/
-        └── Kafka/
-```
-
-## 👤 Autor
-
-Proyecto TFG - Escuela de Vela La Antilla
-
-## 📄 Licencia
-
-Proyecto académico - DAM
-
+Creado para EVS La Antilla - Escuela de Vela

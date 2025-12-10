@@ -15,6 +15,12 @@ spring:
     show-sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  # MongoDB Configuration
+  data:
+    mongodb:
+      uri: mongodb://evs_admin:evs_password@localhost:27017/evs_documents?authSource=admin
+
   kafka:
     bootstrap-servers: localhost:29092
     consumer:
@@ -39,6 +45,12 @@ sailing:
     latitude: 37.2074
     longitude: -7.2193
     orientation: 180  # Orientación en grados (Sur)
+
+# Web Scraping Configuration
+weather:
+  scraping:
+    url: https://www.escuela-vela.com/meteo/
+    interval: 300000  # 5 minutos
 
 eureka:
   instance:
