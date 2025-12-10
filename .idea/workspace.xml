@@ -4,120 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="208b4cc8-d9ee-450e-9d0b-c23bb2b2faf1" name="Changes" comment="Implement user authentication and authorization with JWT, add user and role entities, and configure Kafka topics">
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/HELP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Controller/CashRegisterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Controller/PaymentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Controller/PayrollController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Controller/SalaryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Controller/WorkedHoursController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/DTO/CashDiscrepancyReportDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/DTO/CashRegisterDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/DTO/PaymentDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/DTO/PayrollDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/DTO/PayrollSummaryDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/DTO/SalaryDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/DTO/WorkedHoursDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Entities/CashRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Entities/Enums/PaymentMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Entities/Enums/PaymentStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Entities/Enums/PaymentType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Entities/Payment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Entities/Payroll.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Entities/Salary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Entities/WorkedHours.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Kafka/ContabilityKafkaConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Kafka/KafkaTopicConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/MicroserviceContabilityApiApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Repository/CashRegisterRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Repository/PaymentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Repository/PayrollRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Repository/SalaryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Repository/WorkedHoursRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Service/Impl/CashRegisterServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Service/Impl/PaymentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Service/Impl/PayrollServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Service/Impl/SalaryServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Service/Impl/WorkedHoursServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Service/Inter/ICashRegisterService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Service/Inter/IPaymentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Service/Inter/IPayrollService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Service/Inter/ISalaryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/java/com/evs/Contability/MicroserviceContabilityApi/Service/Inter/IWorkedHoursService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceContabilityApi/src/test/java/com/evs/Contability/MicroserviceContabilityApi/MicroserviceContabilityApiApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Controller/ClassDocumentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Controller/RegattaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Controller/RentalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Controller/WeatherController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Boat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Enums/EquipmentStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Enums/EquipmentType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Equipment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Mongo/ClassDocument.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Race.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/RaceResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Regatta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/RegattaParticipant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Rental.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/WeatherData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Repository/BoatRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Repository/ClassDocumentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Repository/EquipmentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Repository/RaceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Repository/RaceResultRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Repository/RegattaParticipantRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Repository/RegattaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Repository/RentalRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Repository/WeatherDataRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Impl/ClassDocumentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Impl/RegattaService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Impl/RentalService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Impl/WeatherScrapingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Inter/IClassDocumentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Inter/IRegattaService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Inter/IRentalService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Service/Inter/IWeatherService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/HELP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/MicroserviceRegattaApiApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/test/java/com/evs/MicroserviceRegattaApi/MicroserviceRegattaApiApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Config/RestTemplateConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Controller/ProfilePhotoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Entities/Mongo/ProfilePhoto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Repository/ProfilePhotoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Service/Inter/IProfilePhotoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Service/ProfilePhotoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilotDiffState.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilotDiffState.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceCourseApi/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/MicroserviceCourseApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/MicroserviceCourseApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Service/IStudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Service/IStudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Service/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Service/StudentsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceStudentsAPI/src/main/java/com/empresa/students/MicroserviceStudentsAPI/Service/StudentsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Entities/Enums/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Entities/Enums/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="208b4cc8-d9ee-450e-9d0b-c23bb2b2faf1" name="Changes" comment="Set up initial structure for Contability microservice, including configuration files, entity definitions, and repository interfaces">
+      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilotDiffState.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceRegattaApi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/MicroserviceRegattaApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/MicroserviceRegattaApiApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,7 +187,7 @@
       <workItem from="1746891215546" duration="187000" />
       <workItem from="1765309974674" duration="2694000" />
       <workItem from="1765316079583" duration="4566000" />
-      <workItem from="1765394944319" duration="2673000" />
+      <workItem from="1765394944319" duration="3028000" />
     </task>
     <task id="LOCAL-00001" summary="Add schedule management functionality and refactor course service structure">
       <option name="closed" value="true" />
@@ -314,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765322177024</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Set up initial structure for Contability microservice, including configuration files, entity definitions, and repository interfaces">
+      <option name="closed" value="true" />
+      <created>1765397762872</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1765397762872</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,7 +233,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add schedule management functionality and refactor course service structure" />
     <MESSAGE value="Implement user authentication and authorization with JWT, add user and role entities, and configure Kafka topics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement user authentication and authorization with JWT, add user and role entities, and configure Kafka topics" />
+    <MESSAGE value="Set up initial structure for Contability microservice, including configuration files, entity definitions, and repository interfaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set up initial structure for Contability microservice, including configuration files, entity definitions, and repository interfaces" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
