@@ -146,6 +146,80 @@ public class StudentService {
         log.info("Nivel de {} actualizado a {}", student.getName(), newLevel);
     }
 
+    // === Nuevos métodos para funcionalidades de alumnos ===
+
+    public List<java.util.Map<String, Object>> getClassHistory(Long studentId) {
+        Student student = studentRepository.findById(studentId)
+                .orElseThrow(() -> new RuntimeException("Estudiante no encontrado: " + studentId));
+
+        List<java.util.Map<String, Object>> history = new java.util.ArrayList<>();
+        for (Long courseId : student.getCourseIds()) {
+            java.util.Map<String, Object> classInfo = new java.util.HashMap<>();
+            classInfo.put("courseId", courseId);
+            classInfo.put("studentId", studentId);
+            classInfo.put("status", "enrolled");
+            history.add(classInfo);
+        }
+        return history;
+    }
+
+    public List<java.util.Map<String, Object>> getExercisesCompleted(Long studentId) {
+        Student student = studentRepository.findById(studentId)
+                .orElseThrow(() -> new RuntimeException("Estudiante no encontrado: " + studentId));
+
+        List<java.util.Map<String, Object>> exercises = new java.util.ArrayList<>();
+        String level = student.getSkillLevel() != null ? student.getSkillLevel().name() : "BEGINNER";
+
+        switch (level.toUpperCase()) {
+            case "BEGINNER" -> {
+                exercises.add(java.util.Map.of("name", "Posición básica", "completed", true));
+                exercises.add(java.util.Map.of("name", "Manejo del timón", "completed", true));
+                exercises.add(java.util.Map.of("name", "Orzar y arribar", "completed", false));
+            }
+            case "INTERMEDIATE" -> {
+                exercises.add(java.util.Map.of("name", "Virada por avante", "completed", true));
+                exercises.add(java.util.Map.of("name", "Trasluchada", "completed", true));
+                exercises.add(java.util.Map.of("name", "Navegación en ceñida", "completed", false));
+            }
+            case "ADVANCED", "EXPERT" -> {
+                exercises.add(java.util.Map.of("name", "Navegación en planeo", "completed", true));
+                exercises.add(java.util.Map.of("name", "Uso del arnés", "completed", true));
+                exercises.add(java.util.Map.of("name", "Water start", "completed", false));
+            }
+        }
+        return exercises;
+    }
+
+    public java.util.Map<String, Object> getStudentStats(Long studentId) {
+        Student student = studentRepository.findById(studentId)
+                .orElseThrow(() -> new RuntimeException("Estudiante no encontrado: " + studentId));
+
+        return java.util.Map.of(
+                "studentId", studentId,
+                "name", student.getName() + " " + (student.getLastName() != null ? student.getLastName() : ""),
+                "skillLevel", student.getSkillLevel() != null ? student.getSkillLevel().name() : "BEGINNER",
+                "totalCourses", student.getCourseIds() != null ? student.getCourseIds().size() : 0,
+                "isMember", student.getSocio() != null ? student.getSocio() : false
+        );
+    }
+
+    public int getTotalClassesAttended(Long studentId) {
+        Student student = studentRepository.findById(studentId)
+                .orElseThrow(() -> new RuntimeException("Estudiante no encontrado: " + studentId));
+        return student.getCourseIds() != null ? student.getCourseIds().size() : 0;
+    }
+
+    public java.util.Map<String, Object> getWeatherPrediction() {
+        // Retornar predicción básica - en producción se llamaría al microservicio de cursos
+        return java.util.Map.of(
+                "windTrend", "STABLE",
+                "recommendation", "Buenas condiciones para navegación",
+                "suitableForBeginners", true,
+                "suitableForAdvanced", true,
+                "bestActivityType", "CATAMARAN"
+        );
+    }
+
     private StudentResponse toResponse(Student student) {
         return StudentResponse.builder()
                 .id(student.getId())
