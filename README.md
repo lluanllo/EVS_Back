@@ -5,37 +5,36 @@ Sistema backend basado en microservicios para la gestión integral de una escuel
 ## 🏗️ Arquitectura
 
 ```
-┌──────────────────────────────────────────────────────────────────────────────┐
-│                           EVS La Antilla                                      │
-├──────────────────────────────────────────────────────────────────────────────┤
-│                                                                               │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐          │
-│  │  Teacher    │  │  Students   │  │   Course    │  │ Contability │          │
-│  │    API      │  │    API      │  │    API      │  │    API      │          │
-│  │   :8082     │  │   :8081     │  │   :8083     │  │   :8084     │          │
-│  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘          │
-│         │                │                │                │                  │
-│         └────────────────┴────────────────┴────────────────┘                  │
-│                                   │                                           │
-│                           ┌───────┴───────┐                                   │
-│                           │    KAFKA      │                                   │
-│                           │   :29092      │                                   │
-│                           └───────────────┘                                   │
-│                                   │                                           │
-│              ┌────────────────────┴────────────────────┐                      │
-│              │                                         │                      │
-│      ┌───────┴───────┐                        ┌────────┴────────┐             │
-│      │  PostgreSQL   │                        │    MongoDB      │             │
-│      │    :5432      │                        │    :27017       │             │
-│      │ (Datos CRUD)  │                        │ (PDFs, Fotos)   │             │
-│      └───────────────┘                        └─────────────────┘             │
-│                                                                               │
-│                           ┌───────────────┐                                   │
-│                           │   Eureka      │                                   │
-│                           │    :8761      │                                   │
-│                           └───────────────┘                                   │
-│                                                                               │
-└──────────────────────────────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────────────────────────────────┐
+│                              EVS La Antilla                                            │
+├───────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                        │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐                     │
+│  │ Teacher  │ │ Students │ │  Course  │ │ Account  │ │ Regatta  │                     │
+│  │   API    │ │   API    │ │   API    │ │   API    │ │   API    │                     │
+│  │  :8082   │ │  :8081   │ │  :8083   │ │  :8084   │ │  :8085   │                     │
+│  └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬─────┘                     │
+│       │            │            │            │            │                            │
+│       └────────────┴────────────┴────────────┴────────────┘                            │
+│                                 │                                                      │
+│                         ┌───────┴───────┐                                              │
+│                         │    KAFKA      │                                              │
+│                         │   :29092      │                                              │
+│                         └───────────────┘                                              │
+│                                 │                                                      │
+│            ┌────────────────────┴────────────────────┐                                 │
+│            │                                         │                                 │
+│    ┌───────┴───────┐                        ┌────────┴────────┐                        │
+│    │  PostgreSQL   │                        │    MongoDB      │                        │
+│    │    :5432      │                        │    :27017       │                        │
+│    └───────────────┘                        └─────────────────┘                        │
+│                                                                                        │
+│                         ┌───────────────┐                                              │
+│                         │   Eureka      │                                              │
+│                         │    :8761      │                                              │
+│                         └───────────────┘                                              │
+│                                                                                        │
+└───────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ## 📦 Microservicios
@@ -43,9 +42,9 @@ Sistema backend basado en microservicios para la gestión integral de una escuel
 ### MicroserviceTeacherRegisterAPI (Puerto 8082)
 - **Autenticación**: JWT, registro y login
 - **CRUD de profesores**: Gestión completa
-- **Especialidades**: WINDSURF, CATAMARAN, MINICATA, OPTIMIST, PADDLE_SURF, KAYAK, SUMMER_CAMP, VELA_LIGERA
-- **Tipos de contrato**: FIJO (prioridad 1), TEMPORAL (prioridad 2), PRACTICAS (prioridad 3)
-- **Algoritmo de asignación**: Distribución equitativa de horas respetando prioridades
+- **Especialidades**: WINDSURF, CATAMARAN, MINICATA, OPTIMIST, etc.
+- **Tipos de contrato**: FIJO, TEMPORAL, PRACTICAS (con prioridad)
+- **Algoritmo de asignación**: Distribución equitativa respetando prioridades
 - **Sistema de notificaciones**: Email para horarios y confirmaciones
 - **Fotos de perfil**: Almacenamiento en MongoDB
 
@@ -56,39 +55,66 @@ Sistema backend basado en microservicios para la gestión integral de una escuel
 - **Historial de clases**: Consulta de clases realizadas
 - **Ejercicios completados**: Seguimiento de progreso
 - **Predicción de viento**: Consulta de condiciones meteorológicas
-- **Gestión de socios**: Diferenciación de clientes
 
 ### MicroserviceCourseApi (Puerto 8083)
 - **CRUD de cursos**: Gestión completa
-- **Planificador de rutas**: Generación de rutas de navegación según viento
+- **Planificador de rutas**: Generación de rutas según viento
 - **Generador de imágenes**: Rutas visuales para profesores
-- **Web Scraping meteorológico**: Datos de https://www.escuela-vela.com/meteo/
-- **Generación de PDFs**: Documentos de clase con maniobras y bordos
-- **Sistema de alquiler**: CRUD de equipamiento y alquileres
-- **Verificación de aptitud**: Control de quien puede alquilar material
-- **Sistema de regatas**: Inscripciones, mangas, resultados y clasificación
-- **Rating de barcos**: Cálculo automático de handicap
+- **Web Scraping meteorológico**: Datos en tiempo real
+- **Generación de PDFs**: Documentos de clase
+- **Sistema de alquiler**: Equipamiento y verificación de aptitud
 
 ### MicroserviceContabilityApi (Puerto 8084)
-- **Gestión de pagos**: Clases, alquileres, summercamps, regatas
+- **Gestión de pagos**: Clases, alquileres, summercamps
 - **Control de sueldos**: Configuración salarial por profesor
-- **Registro de horas**: Control de horas trabajadas con validación
-- **Generación de nóminas**: Cálculo automático con deducciones (IRPF, SS)
-- **Cuadre de caja**: Control diario de efectivo/transferencias/tarjeta/bizum
-- **Detección de descuadres**: Análisis y desglose de discrepancias
+- **Registro de horas**: Control de horas trabajadas
+- **Generación de nóminas**: Cálculo automático (IRPF, SS)
+- **Cuadre de caja**: Control diario efectivo/transferencia/tarjeta
+
+### MicroserviceRegattaApi (Puerto 8085) 🆕
+- **Gestión de regatas**: CRUD completo (solo BOSS/ADMIN)
+- **Gestión de barcos**: Registro con rating automático
+- **Inscripción de participantes**: Patrón y tripulación
+- **Sistema de mangas**: Creación, inicio, finalización
+- **Registro de resultados**: FINISH, DNF, DNS, DSQ, OCS
+- **Clasificación automática**: Cálculo de posiciones y puntos
+- **Sistema de descartes**: Aplicación de peores resultados
 
 ### MicroserviceErekaServer (Puerto 8761)
 - Descubrimiento de servicios
-- Registro de microservicios
 
 ## 🔐 Roles del Sistema
 
 | Rol | Descripción |
 |-----|-------------|
-| **ADMIN** | Administrador del sistema - Control total |
-| **BOSS** | Dueños de la escuela - Eventos, regatas, nóminas, cuadre de caja |
-| **TEACHER** | Profesores - Gestión de clases, alquileres |
-| **STUDENT** | Alumnos - Consulta de historial y predicción |
+| **ADMIN** | Control total del sistema |
+| **BOSS** | Regatas, nóminas, cuadre de caja |
+| **TEACHER** | Gestión de clases, alquileres |
+| **STUDENT** | Consulta de historial y clima |
+
+## 🏛️ Arquitectura SOLID
+
+Cada microservicio sigue los principios SOLID:
+
+### Single Responsibility
+- Interfaces separadas por funcionalidad
+- `IRegattaService`, `IBoatService`, `IParticipantService`, `IRaceService`, etc.
+
+### Open/Closed
+- Servicios extensibles via interfaces
+- Implementaciones intercambiables
+
+### Liskov Substitution
+- Interfaces bien definidas
+- Cualquier implementación puede sustituir a otra
+
+### Interface Segregation
+- Interfaces pequeñas y específicas
+- `IClassificationService`, `IRaceResultService`, etc.
+
+### Dependency Inversion
+- Dependencia de abstracciones (interfaces)
+- Inyección de dependencias con Spring
 
 ## 🚀 Inicio Rápido
 
