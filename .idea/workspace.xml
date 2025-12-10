@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="208b4cc8-d9ee-450e-9d0b-c23bb2b2faf1" name="Changes" comment="Set up initial structure for Contability microservice, including configuration files, entity definitions, and repository interfaces">
-      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilotDiffState.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MicroserviceRegattaApi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/MicroserviceRegattaApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/MicroserviceRegattaApiApplication.java" afterDir="false" />
+    <list default="true" id="208b4cc8-d9ee-450e-9d0b-c23bb2b2faf1" name="Changes" comment="Add regatta management entities, repositories, service interfaces, and implementations; configure Eureka, Kafka, JPA, and security dependencies">
+      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Controller/BoatController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Controller/ParticipantController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Controller/RaceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Controller/RegattaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Kafka/KafkaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Security/JwtService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilotDiffState.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilotDiffState.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Boat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Race.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/RaceResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Regatta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/RegattaParticipant.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +197,7 @@
       <workItem from="1746891215546" duration="187000" />
       <workItem from="1765309974674" duration="2694000" />
       <workItem from="1765316079583" duration="4566000" />
-      <workItem from="1765394944319" duration="3028000" />
+      <workItem from="1765394944319" duration="3416000" />
     </task>
     <task id="LOCAL-00001" summary="Add schedule management functionality and refactor course service structure">
       <option name="closed" value="true" />
@@ -213,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765397762872</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add regatta management entities, repositories, service interfaces, and implementations; configure Eureka, Kafka, JPA, and security dependencies">
+      <option name="closed" value="true" />
+      <created>1765398198762</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1765398198762</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,7 +252,8 @@
     <MESSAGE value="Add schedule management functionality and refactor course service structure" />
     <MESSAGE value="Implement user authentication and authorization with JWT, add user and role entities, and configure Kafka topics" />
     <MESSAGE value="Set up initial structure for Contability microservice, including configuration files, entity definitions, and repository interfaces" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set up initial structure for Contability microservice, including configuration files, entity definitions, and repository interfaces" />
+    <MESSAGE value="Add regatta management entities, repositories, service interfaces, and implementations; configure Eureka, Kafka, JPA, and security dependencies" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add regatta management entities, repositories, service interfaces, and implementations; configure Eureka, Kafka, JPA, and security dependencies" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
