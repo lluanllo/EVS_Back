@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="MicroserviceTeacherRegisterAPI" />
+        <module name="MicroserviceContabilityApi" />
         <module name="MicroserviceCourseApi" />
         <module name="MicroserviceErekaServer" />
         <module name="MicroserviceStudentsAPI" />
+        <module name="MicroserviceRegattaApi" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -18,8 +20,10 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="MicroserviceContabilityApi" options="-parameters" />
       <module name="MicroserviceCourseApi" options="-parameters" />
       <module name="MicroserviceErekaServer" options="-parameters" />
+      <module name="MicroserviceRegattaApi" options="-parameters" />
       <module name="MicroserviceScheduleApi" options="-parameters" />
       <module name="MicroserviceStudentsAPI" options="-parameters" />
       <module name="MicroserviceTeacherRegisterAPI" options="-parameters" />

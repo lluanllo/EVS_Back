@@ -87,6 +87,12 @@
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
 
+		<!-- MongoDB para fotos de perfil -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+
 		<!-- PostgreSQL (unificado) -->
 		<dependency>
 			<groupId>org.postgresql</groupId>

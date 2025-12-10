@@ -1,0 +1,61 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: contability-service
+
+  # PostgreSQL Configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tfgdb
+    username: postgres
+    password: curso
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+  # MongoDB Configuration
+  data:
+    mongodb:
+      uri: mongodb://evs_admin:evs_password@localhost:27017/evs_documents?authSource=admin
+
+  # Kafka Configuration
+  kafka:
+    bootstrap-servers: localhost:29092
+    consumer:
+      group-id: contability-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+# Eureka Configuration
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+# JWT Configuration
+jwt:
+  secret: VGhpc0lzQVZlcnlMb25nU2VjcmV0S2V5Rm9yRVZTU2Nob29sT2ZTYWlsaW5nQXBwbGljYXRpb24yMDI0
+  expiration: 86400000
+
+# Logging
+logging:
+  level:
+    com.evs.Contability: DEBUG
+    org.springframework.kafka: INFO
+

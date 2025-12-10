@@ -15,6 +15,12 @@ spring:
     show-sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  # MongoDB Configuration for profile photos
+  data:
+    mongodb:
+      uri: mongodb://evs_admin:evs_password@localhost:27017/evs_documents?authSource=admin
+
   kafka:
     bootstrap-servers: localhost:29092
     consumer:
@@ -39,6 +45,10 @@ spring:
           auth: true
           starttls:
             enable: true
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 10MB
 
 jwt:
   secret: RVZTX0xhQW50aWxsYV9TZWNyZXRLZXlfMjAyNF9URkdfU2FpbGluZ1NjaG9vbF9KV1RfVG9rZW5fS2V5
