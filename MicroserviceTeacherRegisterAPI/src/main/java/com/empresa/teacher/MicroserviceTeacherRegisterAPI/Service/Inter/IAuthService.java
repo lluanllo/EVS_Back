@@ -1,17 +1,17 @@
 package com.empresa.teacher.MicroserviceTeacherRegisterAPI.Service.Inter;
 
+import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Controller.DTO.AuthRequest;
 import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Controller.DTO.AuthResponse;
-import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Controller.DTO.LoginRequest;
-import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Controller.DTO.RegisterRequest;
+import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Controller.DTO.TeacherRequest;
 
 /**
  * Interfaz para autenticación (Single Responsibility)
  */
 public interface IAuthService {
 
-    AuthResponse register(RegisterRequest request);
+    AuthResponse register(TeacherRequest request);
 
-    AuthResponse login(LoginRequest request);
+    AuthResponse login(AuthRequest request);
 
     void logout(String token);
 
@@ -19,4 +19,3 @@ public interface IAuthService {
 
     String refreshToken(String token);
 }
-

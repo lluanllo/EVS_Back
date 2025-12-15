@@ -148,7 +148,7 @@ public class StudentsServiceImpl implements IStudentService {
         Student student = findById(studentId);
 
         if (student.getCourseIds() == null) {
-            student.setCourseIds(new HashSet<>());
+            student.setCourseIds(new HashSet<Long>());
         }
 
         student.getCourseIds().add(courseId);

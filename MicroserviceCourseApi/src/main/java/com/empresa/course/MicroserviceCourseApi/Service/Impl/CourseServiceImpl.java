@@ -1,9 +1,5 @@
 package com.empresa.course.MicroserviceCourseApi.Service.Impl;
 
-import com.empresa.course.MicroserviceCourseApi.Client.StudentClient;
-import com.empresa.course.MicroserviceCourseApi.Client.TeacherClient;
-import com.empresa.course.MicroserviceCourseApi.Controller.DTO.StudentDTO;
-import com.empresa.course.MicroserviceCourseApi.Controller.DTO.TeacherDTO;
 import com.empresa.course.MicroserviceCourseApi.Entities.Course;
 import com.empresa.course.MicroserviceCourseApi.HTTP.Response.StudentsTeachersByCourseResponse;
 import com.empresa.course.MicroserviceCourseApi.Repository.CourseRepository;
@@ -18,12 +14,6 @@ public class CourseServiceImpl implements ICourseService {
 
     @Autowired
     private CourseRepository courseRepository;
-
-    @Autowired
-    private StudentClient studentClient;
-
-    @Autowired
-    private TeacherClient teacherClient;
 
     @Override
     public void save(Course course) {
@@ -47,18 +37,21 @@ public class CourseServiceImpl implements ICourseService {
         return course;
     }
 
-    @Override
     public StudentsTeachersByCourseResponse getStudentsAndTeachersByCourse(Long idCourse) {
 
         Course course = courseRepository.findById(idCourse).orElse(new Course());
 
-        List<StudentDTO> studentsDTOList = studentClient.findAllStudentsByCourse(idCourse);
-        List<TeacherDTO> teachersDTOList = teacherClient.findAllTeachersByCourse(idCourse);
-
+        // TODO: Use Kafka to get students and teachers
         return StudentsTeachersByCourseResponse.builder()
                 .CourseName(course.getName())
-                .teachersDTOList(teachersDTOList)
-                .studentsDTOList(studentsDTOList)
+                .teachersDTOList(List.of()) // Stub
+                .studentsDTOList(List.of()) // Stub
                 .build();
+    }
+
+    @Override
+    public int getStudentCount(Long courseId) {
+        // TODO: Use Kafka to get count
+        return 0; // Stub
     }
 }

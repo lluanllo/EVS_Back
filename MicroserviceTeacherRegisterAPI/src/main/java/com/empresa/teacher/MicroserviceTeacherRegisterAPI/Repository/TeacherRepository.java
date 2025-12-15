@@ -1,7 +1,7 @@
 package com.empresa.teacher.MicroserviceTeacherRegisterAPI.Repository;
 
 import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Enums.ContractType;
-import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Enums.Speciality;
+import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Enums.Specialty;
 import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Teacher;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -30,12 +30,12 @@ public interface TeacherRepository extends JpaRepository<Teacher, Long> {
 
     // Buscar profesores por especialidad
     @Query("SELECT t FROM Teacher t JOIN t.specialities s WHERE s = :speciality AND t.available = true")
-    List<Teacher> findBySpecialityAndAvailable(@Param("speciality") Speciality speciality);
+    List<Teacher> findBySpecialityAndAvailable(@Param("speciality") Specialty speciality);
 
     // Buscar profesores disponibles por especialidad ordenados por prioridad de contrato y horas trabajadas
     @Query("SELECT t FROM Teacher t JOIN t.specialities s WHERE s = :speciality AND t.available = true " +
            "ORDER BY t.contractType ASC, t.workedHours ASC")
-    List<Teacher> findAvailableBySpecialityOrderByPriorityAndHours(@Param("speciality") Speciality speciality);
+    List<Teacher> findAvailableBySpecialityOrderByPriorityAndHours(@Param("speciality") Specialty speciality);
 
     // Buscar profesores que no han confirmado disponibilidad
     List<Teacher> findByConfirmedAvailabilityFalse();
@@ -43,4 +43,3 @@ public interface TeacherRepository extends JpaRepository<Teacher, Long> {
     // Buscar por curso asignado
     List<Teacher> findByIdCourse(Long courseId);
 }
-

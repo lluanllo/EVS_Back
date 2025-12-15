@@ -3,7 +3,7 @@ package com.empresa.teacher.MicroserviceTeacherRegisterAPI.Service;
 import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Controller.DTO.TeacherRequest;
 import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Controller.DTO.TeacherResponse;
 import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Enums.ContractType;
-import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Enums.Speciality;
+import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Enums.Specialty;
 import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Teacher;
 import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Repository.TeacherRepository;
 import lombok.RequiredArgsConstructor;
@@ -108,7 +108,7 @@ public class TeacherService {
     /**
      * Obtener profesores disponibles por especialidad
      */
-    public List<TeacherResponse> findAvailableBySpeciality(Speciality speciality) {
+    public List<TeacherResponse> findAvailableBySpeciality(Specialty speciality) {
         return teacherRepository.findAvailableBySpecialityOrderByPriorityAndHours(speciality).stream()
                 .map(this::toResponse)
                 .collect(Collectors.toList());
@@ -186,4 +186,3 @@ public class TeacherService {
                 .build();
     }
 }
-

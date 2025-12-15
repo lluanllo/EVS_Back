@@ -3,7 +3,7 @@ package com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Enums;
 /**
  * Especialidades de navegación que puede tener un profesor
  */
-public enum Speciality {
+public enum Specialty {
     WINDSURF("Windsurf"),
     CATAMARAN("Catamarán"),
     MINICATA("Minicatamarán"),
@@ -15,7 +15,7 @@ public enum Speciality {
 
     private final String displayName;
 
-    Speciality(String displayName) {
+    Specialty(String displayName) {
         this.displayName = displayName;
     }
 
@@ -23,4 +23,3 @@ public enum Speciality {
         return displayName;
     }
 }
-

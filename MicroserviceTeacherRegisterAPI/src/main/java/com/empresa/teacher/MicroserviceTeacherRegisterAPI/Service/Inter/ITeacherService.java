@@ -42,4 +42,3 @@ public interface ITeacherService {
 
     boolean existsByDni(String dni);
 }
-

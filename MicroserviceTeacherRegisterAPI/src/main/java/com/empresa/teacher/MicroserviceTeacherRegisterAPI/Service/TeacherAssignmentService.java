@@ -1,7 +1,7 @@
 package com.empresa.teacher.MicroserviceTeacherRegisterAPI.Service;
 
 import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Enums.ContractType;
-import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Enums.Speciality;
+import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Enums.Specialty;
 import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Teacher;
 import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Repository.TeacherRepository;
 import lombok.RequiredArgsConstructor;
@@ -34,7 +34,7 @@ public class TeacherAssignmentService {
      * @return Optional con el profesor asignado o vacío si no hay disponible
      */
     @Transactional
-    public Optional<Teacher> assignTeacher(Speciality speciality, int durationMinutes) {
+    public Optional<Teacher> assignTeacher(Specialty speciality, int durationMinutes) {
         log.info("Buscando profesor para {} con duración {} minutos", speciality, durationMinutes);
 
         // Obtener profesores disponibles con la especialidad, ordenados por prioridad y horas
@@ -125,7 +125,7 @@ public class TeacherAssignmentService {
      * Asigna múltiples profesores para una clase que requiere varios instructores.
      */
     @Transactional
-    public List<Teacher> assignMultipleTeachers(Speciality speciality, int durationMinutes, int count) {
+    public List<Teacher> assignMultipleTeachers(Specialty speciality, int durationMinutes, int count) {
         List<Teacher> assigned = new ArrayList<>();
 
         for (int i = 0; i < count; i++) {
@@ -144,7 +144,7 @@ public class TeacherAssignmentService {
     /**
      * Asigna un profesor excluyendo los ya asignados.
      */
-    private Optional<Teacher> assignTeacherExcluding(Speciality speciality, int durationMinutes,
+    private Optional<Teacher> assignTeacherExcluding(Specialty speciality, int durationMinutes,
                                                       List<Teacher> excluded) {
         Set<Long> excludedIds = excluded.stream()
                 .map(Teacher::getId)
@@ -174,7 +174,7 @@ public class TeacherAssignmentService {
      * Mantiene las reglas de prioridad pero excluye al profesor original.
      */
     @Transactional
-    public Optional<Teacher> reassignTeacher(Long originalTeacherId, Speciality speciality, int durationMinutes) {
+    public Optional<Teacher> reassignTeacher(Long originalTeacherId, Specialty speciality, int durationMinutes) {
         log.info("Reasignando profesor para {}, profesor original: {}", speciality, originalTeacherId);
 
         List<Teacher> candidates = teacherRepository.findAvailableBySpecialityOrderByPriorityAndHours(speciality)
@@ -235,4 +235,3 @@ public class TeacherAssignmentService {
         return (maxHours - minHours) <= thresholdHours;
     }
 }
-

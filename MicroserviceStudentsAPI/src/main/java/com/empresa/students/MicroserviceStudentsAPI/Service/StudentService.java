@@ -104,7 +104,7 @@ public class StudentService {
     }
 
     public List<StudentResponse> findByCourseId(Long courseId) {
-        return studentRepository.findByCourseId(courseId).stream()
+        return studentRepository.findByIdCourse(courseId).stream()
                 .map(this::toResponse)
                 .collect(Collectors.toList());
     }
@@ -239,4 +239,3 @@ public class StudentService {
                 .build();
     }
 }
-

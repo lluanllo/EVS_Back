@@ -386,4 +386,3 @@ public class RoutePlannerService {
         boolean canSailUpwind;
     }
 }
-

@@ -1,7 +1,7 @@
 package com.empresa.teacher.MicroserviceTeacherRegisterAPI.Controller.DTO;
 
 import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Enums.ContractType;
-import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Enums.Speciality;
+import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Enums.Specialty;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -36,11 +36,10 @@ public class TeacherRequest {
     private String password;
 
     @NotNull(message = "Las especialidades son obligatorias")
-    private Set<Speciality> specialities;
+    private Set<Specialty> specialities;
 
     @NotNull(message = "El tipo de contrato es obligatorio")
     private ContractType contractType;
 
     private Integer maxWeeklyHours;
 }
-

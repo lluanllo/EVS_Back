@@ -26,7 +26,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
     // Buscar estudiantes inscritos en un curso
     @Query("SELECT s FROM Student s WHERE :courseId MEMBER OF s.courseIds")
-    List<Student> findByCourseId(@Param("courseId") Long courseId);
+    List<Student> findByIdCourse(@Param("courseId") Long courseId);
 
     // Buscar socios
     List<Student> findBySocioTrue();
@@ -34,4 +34,3 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     // Buscar por nombre (búsqueda parcial)
     List<Student> findByNameContainingIgnoreCase(String name);
 }
-

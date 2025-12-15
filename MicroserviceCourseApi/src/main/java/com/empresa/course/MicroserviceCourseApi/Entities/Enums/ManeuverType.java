@@ -6,7 +6,7 @@ package com.empresa.course.MicroserviceCourseApi.Entities.Enums;
 public enum ManeuverType {
     VIRADA("Virada", "Cambio de bordo pasando la proa por el viento"),
     TRASLUCHADA("Trasluchada", "Cambio de bordo pasando la popa por el viento"),
-    CEÑIDA("Ceñida", "Navegación contra el viento"),
+    CENIDA("Ceñida", "Navegación contra el viento"),
     TRAVES("Través", "Navegación perpendicular al viento"),
     LARGO("Largo", "Navegación con viento de aleta"),
     POPA("Popa", "Navegación con viento de popa"),
@@ -29,4 +29,3 @@ public enum ManeuverType {
         return description;
     }
 }
-

@@ -2,7 +2,7 @@ package com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities;
 
 import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Enums.ContractType;
 import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Enums.Role;
-import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Enums.Speciality;
+import com.empresa.teacher.MicroserviceTeacherRegisterAPI.Entities.Enums.Specialty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -43,11 +43,11 @@ public class Teacher {
     private String password;
 
     // Especialidades del profesor (puede tener varias)
-    @ElementCollection(targetClass = Speciality.class, fetch = FetchType.EAGER)
+    @ElementCollection(targetClass = Specialty.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "teacher_specialities", joinColumns = @JoinColumn(name = "teacher_id"))
     @Enumerated(EnumType.STRING)
     @Column(name = "speciality")
-    private Set<Speciality> specialities = new HashSet<>();
+    private Set<Specialty> specialities = new HashSet<>();
 
     // Tipo de contrato con prioridad
     @Enumerated(EnumType.STRING)

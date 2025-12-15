@@ -59,7 +59,7 @@ public class ProfilePhotoController {
     }
 
     @GetMapping("/{teacherId}/photo/info")
-    public ResponseEntity<Map<String, Object>> getPhotoInfo(@PathVariable Long teacherId) {
+    public ResponseEntity<?> getPhotoInfo(@PathVariable Long teacherId) {
         return profilePhotoService.getPhoto(teacherId)
                 .map(photo -> ResponseEntity.ok(Map.of(
                         "exists", true,
@@ -87,4 +87,3 @@ public class ProfilePhotoController {
         return ResponseEntity.ok(Map.of("hasPhoto", profilePhotoService.hasPhoto(teacherId)));
     }
 }
-

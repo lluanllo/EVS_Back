@@ -37,4 +37,3 @@ public interface ITeacherAssignmentService {
      */
     Teacher reassignCourse(Long courseId, Long excludeTeacherId);
 }
-
