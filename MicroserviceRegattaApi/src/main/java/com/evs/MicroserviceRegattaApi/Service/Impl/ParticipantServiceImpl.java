@@ -27,7 +27,7 @@ public class ParticipantServiceImpl implements IParticipantService {
     private final RegattaParticipantRepository participantRepository;
     private final IBoatService boatService;
     private final KafkaTemplate<String, Object> kafkaTemplate;
-
+    
     @Lazy
     private final IRegattaService regattaService;
 
@@ -36,7 +36,7 @@ public class ParticipantServiceImpl implements IParticipantService {
     public RegattaParticipant register(Long regattaId, Long boatId, Long skipperId,
                                         List<Long> crewIds, List<String> crewNames) {
         Regatta regatta = regattaService.findById(regattaId);
-
+        
         if (!"INSCRIPCIONES_ABIERTAS".equals(regatta.getStatus())) {
             throw new RuntimeException("Las inscripciones no están abiertas");
         }

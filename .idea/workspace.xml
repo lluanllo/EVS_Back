@@ -4,21 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="208b4cc8-d9ee-450e-9d0b-c23bb2b2faf1" name="Changes" comment="Add regatta management entities, repositories, service interfaces, and implementations; configure Eureka, Kafka, JPA, and security dependencies">
-      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Controller/BoatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Controller/ParticipantController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Controller/RaceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Controller/RegattaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Kafka/KafkaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Security/JwtService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilotDiffState.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilotDiffState.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Boat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Race.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/RaceResult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/Regatta.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Entities/RegattaParticipant.java" beforeDir="false" />
+    <list default="true" id="208b4cc8-d9ee-450e-9d0b-c23bb2b2faf1" name="Changes" comment="Add scripts for service status checks and compilation; implement Feign clients for Students and Teachers APIs">
+      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.ask.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.edit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Client/StudentClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/Client/TeacherClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Controller/DTO/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Controller/DTO/RegisterRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Entities/Enums/Specialty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MicroserviceTeacherRegisterAPI/src/main/java/com/empresa/teacher/MicroserviceTeacherRegisterAPI/Entities/Schedule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/START_GUIDE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/check-status.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compile-all.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run-all-services.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start-all-services.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start-all.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start-services-simple.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stop-all-services.ps1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilotDiffState.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceCourseApi/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/MicroserviceCourseApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceCourseApi/src/main/java/com/empresa/course/MicroserviceCourseApi/MicroserviceCourseApiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceErekaServer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceErekaServer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceRegattaApi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/MicroserviceRegattaApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/MicroserviceRegattaApiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Service/Impl/ClassificationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Service/Impl/ClassificationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Service/Impl/ParticipantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Service/Impl/ParticipantServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Service/Impl/RaceResultServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Service/Impl/RaceResultServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Service/Impl/RaceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Service/Impl/RaceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Service/Impl/RegattaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceRegattaApi/src/main/java/com/evs/MicroserviceRegattaApi/Service/Impl/RegattaServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MicroserviceStudentsAPI/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MicroserviceStudentsAPI/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +68,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/lluanllo/EVS_Back.git&quot;,
-    &quot;accountId&quot;: &quot;4a3d8911-faea-42c3-a769-9750e78cdb5c&quot;
+    &quot;accountId&quot;: &quot;263664b3-f49f-4cfd-b5b8-c10ec2d861ee&quot;
   }
 }</component>
   <component name="MarkdownSettingsMigration">
@@ -66,27 +83,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "ContabilitySetUp",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/deberes/1º de DAM/PROGRAMACION/JAVA/TFG/TFG_BACK",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jjace/Desktop/dev/evs/EVS_Back&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\deberes\1º de DAM\PROGRAMACION\JAVA\TFG\TFG_BACK" />
@@ -155,8 +173,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.26775.15" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.26775.15" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
       </set>
     </attachedChunks>
   </component>
@@ -198,6 +216,8 @@
       <workItem from="1765309974674" duration="2694000" />
       <workItem from="1765316079583" duration="4566000" />
       <workItem from="1765394944319" duration="3416000" />
+      <workItem from="1767188111007" duration="1141000" />
+      <workItem from="1767273915922" duration="2184000" />
     </task>
     <task id="LOCAL-00001" summary="Add schedule management functionality and refactor course service structure">
       <option name="closed" value="true" />
@@ -253,7 +273,8 @@
     <MESSAGE value="Implement user authentication and authorization with JWT, add user and role entities, and configure Kafka topics" />
     <MESSAGE value="Set up initial structure for Contability microservice, including configuration files, entity definitions, and repository interfaces" />
     <MESSAGE value="Add regatta management entities, repositories, service interfaces, and implementations; configure Eureka, Kafka, JPA, and security dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add regatta management entities, repositories, service interfaces, and implementations; configure Eureka, Kafka, JPA, and security dependencies" />
+    <MESSAGE value="Add scripts for service status checks and compilation; implement Feign clients for Students and Teachers APIs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add scripts for service status checks and compilation; implement Feign clients for Students and Teachers APIs" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

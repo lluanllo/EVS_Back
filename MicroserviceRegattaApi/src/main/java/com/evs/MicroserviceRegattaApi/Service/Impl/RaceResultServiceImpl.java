@@ -40,7 +40,7 @@ public class RaceResultServiceImpl implements IRaceResultService {
         result.calculateCorrectedTime(participant.getBoat().getRating());
 
         RaceResult saved = resultRepository.save(result);
-        log.info("Llegada registrada: Participante {} en manga {} - {} segundos",
+        log.info("Llegada registrada: Participante {} en manga {} - {} segundos", 
                 participantId, raceId, elapsedSeconds);
         return saved;
     }
@@ -116,7 +116,7 @@ public class RaceResultServiceImpl implements IRaceResultService {
             result.assignPoints(totalParticipants);
             resultRepository.save(result);
         }
-
+        
         log.info("Posiciones calculadas para manga {}", raceId);
     }
 

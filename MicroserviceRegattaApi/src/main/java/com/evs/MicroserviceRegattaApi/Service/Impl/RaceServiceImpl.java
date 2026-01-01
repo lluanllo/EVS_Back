@@ -22,7 +22,7 @@ public class RaceServiceImpl implements IRaceService {
 
     private final RaceRepository raceRepository;
     private final IClassificationService classificationService;
-
+    
     @Lazy
     private final IRegattaService regattaService;
 
@@ -30,7 +30,7 @@ public class RaceServiceImpl implements IRaceService {
     @Transactional
     public Race create(Long regattaId, Integer raceNumber) {
         Regatta regatta = regattaService.findById(regattaId);
-
+        
         Race race = Race.builder()
                 .regatta(regatta)
                 .raceNumber(raceNumber)
@@ -59,10 +59,10 @@ public class RaceServiceImpl implements IRaceService {
     @Transactional
     public Race finish(Long raceId) {
         Race race = findById(raceId);
-
+        
         // Calcular posiciones
         classificationService.calculateRacePositions(raceId);
-
+        
         // Actualizar puntos totales
         classificationService.updateTotalPoints(race.getRegatta().getId());
 

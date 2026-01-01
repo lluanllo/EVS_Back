@@ -36,7 +36,7 @@ public class ClassificationServiceImpl implements IClassificationService {
             result.assignPoints(totalParticipants);
             resultRepository.save(result);
         }
-
+        
         log.info("Posiciones calculadas para manga {} - {} participantes", raceId, totalParticipants);
     }
 
@@ -44,12 +44,12 @@ public class ClassificationServiceImpl implements IClassificationService {
     @Transactional
     public void updateTotalPoints(Long regattaId) {
         List<RegattaParticipant> participants = participantService.findByRegatta(regattaId);
-
+        
         for (RegattaParticipant participant : participants) {
             Integer totalPoints = resultRepository.sumPointsByParticipant(participant.getId());
             participantService.updateTotalPoints(participant.getId(), totalPoints != null ? totalPoints : 0);
         }
-
+        
         log.info("Puntos totales actualizados para regata {}", regattaId);
     }
 
@@ -57,7 +57,7 @@ public class ClassificationServiceImpl implements IClassificationService {
     @Transactional
     public void calculateFinalClassification(Long regattaId) {
         List<RegattaParticipant> participants = participantService.getClassification(regattaId);
-
+        
         int position = 1;
         for (RegattaParticipant participant : participants) {
             if (!"RETIRADO".equals(participant.getStatus()) && !"DESCALIFICADO".equals(participant.getStatus())) {
@@ -72,14 +72,14 @@ public class ClassificationServiceImpl implements IClassificationService {
     @Transactional
     public void applyDiscards(Long regattaId, int numberOfDiscards) {
         List<RegattaParticipant> participants = participantService.findByRegatta(regattaId);
-
+        
         for (RegattaParticipant participant : participants) {
             List<RaceResult> results = resultRepository.findByParticipantId(participant.getId());
-
+            
             if (results.size() > numberOfDiscards) {
                 // Ordenar por puntos descendente para descartar los peores
                 results.sort(Comparator.comparingInt(RaceResult::getPoints).reversed());
-
+                
                 int totalPoints = 0;
                 int count = 0;
                 for (RaceResult result : results) {
@@ -88,11 +88,11 @@ public class ClassificationServiceImpl implements IClassificationService {
                     }
                     count++;
                 }
-
+                
                 participantService.updateTotalPoints(participant.getId(), totalPoints);
             }
         }
-
+        
         log.info("Descartes aplicados a regata {}: {} mangas descartadas", regattaId, numberOfDiscards);
     }
 }

@@ -30,16 +30,16 @@ public class RegattaServiceImpl implements IRegattaService {
         regatta.setCreatedBy(createdBy);
         regatta.setCreatedAt(LocalDateTime.now());
         regatta.setStatus("PLANIFICADA");
-
+        
         Regatta saved = regattaRepository.save(regatta);
         log.info("Regata creada: {} por usuario {}", saved.getId(), createdBy);
-
+        
         kafkaTemplate.send("regatta-events", "regatta-created", Map.of(
                 "regattaId", saved.getId(),
                 "name", saved.getName(),
                 "date", saved.getEventDate().toString()
         ));
-
+        
         return saved;
     }
 
